@@ -26,3 +26,12 @@ for patient_record in processed_data_list:
 		state_wise_count[patient_record['State_code']] += 1
 
 pprint(state_wise_count)
+
+district_wise_count = {}
+for patient_record in processed_data_list:
+        if 'Detected_District' in patient_record.keys():
+                if patient_record['Detected_District'] not in district_wise_count.keys():
+                        district_wise_count[patient_record['Detected_District']] = 0
+                district_wise_count[patient_record['Detected_District']] += 1
+
+pprint(district_wise_count)
